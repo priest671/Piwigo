@@ -195,7 +195,7 @@ TABLE.languages TR TD { padding: 7px 20px; }
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: block;
 }
 
@@ -209,11 +209,14 @@ TABLE.languages TR TD { padding: 7px 20px; }
   flex-direction: column;
   width: 90%;
   overflow: hidden;
-  margin-left: 20px;
-  margin-bottom: 10px;
+  /* margin-left: 20px;
+  margin-bottom: 10px; */
   display: none;
 }
 
+/*
+ *  Removable
+ */
 .categoryBox:hover .albumActions {
   display: flex;
 }
