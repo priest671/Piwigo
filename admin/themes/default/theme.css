@@ -195,7 +195,7 @@ TABLE.languages TR TD { padding: 7px 20px; }
   text-align: center;
   font-weight: 600;
   font-size: 14px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: block;
 }
 
@@ -209,8 +209,8 @@ TABLE.languages TR TD { padding: 7px 20px; }
   flex-direction: column;
   width: 90%;
   overflow: hidden;
-  margin-left: 20px;
-  margin-bottom: 10px;
+  /* margin-left: 20px;
+  margin-bottom: 10px; */
   display: none;
 }
 
@@ -1159,7 +1159,6 @@ a.stat-box:hover {
 
 .activity-chart .row-legend div{
   margin: auto;
-  white-space: nowrap;
 }
 
 .activity-chart .col-legend {
@@ -1831,8 +1830,6 @@ margin-top:4px; padding-bottom:3px; padding-top:3px; top:1px;
 .themeActions span, .themeActions a {padding: 10px; margin: 0px 10px 10px 10px; font-weight: bold; font-size: 12px;}
 .themeActions span {font-size: 11px; background-color: #ddd; opacity: 0.5; color: ;}
 
-.themeActions .pluginUnavailableAction {margin:0 10px 10px 10px;}
-
 .themeActions a:nth-child(1) {background-color: #ffc17e; color: #222;}
 .themeActions a:nth-child(1):hover {background-color: #ff7700; color: white; text-decoration: none;}
 
@@ -1867,7 +1864,7 @@ h2:lang(en) { text-transform:capitalize; }
  */
 .infos, .errors, .warnings, .messages {
   text-align: left;
-  margin: 20px;
+  margin: 15px 35px 50px 35px;
   padding: 5px;
   font-weight:bold;
   min-height: 54px;
@@ -1924,6 +1921,8 @@ h2:lang(en) { text-transform:capitalize; }
 .infos .submit {margin-left:30px;}
 
 .checkActions {text-align:left;padding:0;margin:0;}
+#user-table-content #checkActions {margin:0; display:flex; flex-wrap:wrap; align-items:center;}
+#user-table-content #checkActions a {padding:10px; margin: 0 4px};
 #checkActions {text-align:left; margin:0 0 20px 0;}
 .ActionUserList #checkActions {margin: 20px 0 20px 0;}
 
@@ -2679,6 +2678,7 @@ a#showPermissions:hover {text-decoration: none;}
   overflow: hidden;
 }
 
+.user-list-checkbox .select-checkbox,
 .tag-container .tag-box .select-checkbox {
   display: none;
   width: 15px;
@@ -2689,10 +2689,16 @@ a#showPermissions:hover {text-decoration: none;}
   border: solid #ffa646 2px;
 }
 
+.user-list-checkbox .select-checkbox {
+  display: inline-block;
+}
+
 .tag-container.selection .tag-box .select-checkbox {
   display: block;
 }
 
+.user-list-checkbox:hover .select-checkbox,
+.user-list-checkbox[data-selected='1'] .select-checkbox,
 .tag-container .tag-box:hover .select-checkbox, 
 .tag-container .tag-box[data-selected='1'] .select-checkbox {
   background-color: #ffa646;
@@ -2702,6 +2708,7 @@ a#showPermissions:hover {text-decoration: none;}
   display: block;
 }
 
+.user-list-checkbox .select-checkbox i,
 .tag-container .tag-box .select-checkbox i {
   display: none;
   font-size: 14px;
@@ -2713,6 +2720,7 @@ a#showPermissions:hover {text-decoration: none;}
   animation-timing-function: ease-out;
 }
 
+.user-list-checkbox[data-selected='1'] .select-checkbox i,
 .tag-container .tag-box[data-selected='1'] .select-checkbox i {
   display: inline;
 }
@@ -3307,7 +3315,7 @@ ul.jqtree-tree .jqtree-element {
 .showCreateAlbum {text-align:left; margin:0 1em 25px 20px; line-height:22px;}
 .showCreateAlbum .userSeparator {margin:0 5px;}
 #addAlbumOpen, #autoOrderOpen {padding: 7px 15px; font-weight: bold; font-size: 11px;}
-.afterUploadActions {text-align: center; margin-bottom: 30px !important; margin-top: 45px !important;}
+.afterUploadActions {text-align: center; margin-bottom: 30px !important;}
 .afterUploadActions a {justify-content: center; margin: 35px; font-weight: bold; font-size: 14px; padding: 10px 12px;}
 #autoOrder p, #createAlbum p {text-align:left; margin:0 0 1em 0;}
 #autoOrder p.actionButtons, #createAlbum p.actionButtons {margin-bottom:0;}
@@ -4607,18 +4615,23 @@ li.plupload_delete a:hover {background: url("images/cancelhover.svg")!important;
 #action_delete_derivatives label, #action_generate_derivatives label {display: flex; margin-top: 4px; width: 50%;}
 #action_delete_derivatives input[name="del_derivatives_type[]"], #action_generate_derivatives input[name="generate_derivatives_type[]"] {margin-right: 3px;}
 .actionButtons:first-child::after,#filter_prefilter::before,#filter_category::before,#filter_level::before,
-.permitActionListButton div::before, #action_level::after, .pictureLevels::before {
+.permitActionListButton div::before, #action_level::after, .pictureLevels::before,
+.user-action-select-container::before, .advanced-filter-select-container::before,
+.user-property-select-container::before  {
   content: '\e835'; font-size: 17px; position: absolute; font-family: "fontello"; color: #6E6E6E; pointer-events: none;
 }
 .permitActionListButton div::before {margin-left: 250px; margin-top: 11px;}
 .pictureLevels::before {margin-left: 216px; margin-top: 10px;}
 .permitActionListButton div.hidden::after {display: none;}
+.user-action-select-container::before {top: 5px; right:10px}
+.user-property-select-container::before {margin-top: 10px; margin-left:270px;}
+.advanced-filter-select-container::before {top: 5px; right:10px}
 #filter_prefilter::before {margin-left: 257px; margin-top: 35px;}
 #filter_category .selectize-control.single .selectize-input::after {content: none;}
 #filter_category {width: 600px;}
 #filter_category::before {margin-left: 565px;margin-top: 33px; z-index: 2;}
 #filter_level::before {margin-top: 34px; margin-left: 260px;}
-#action_level::after {margin-top: -56px; margin-left: 254px;}
+#batchManagerGlobal #action_level::after {margin-top: -56px; margin-left: 254px;}
 #filter_search input {width: 300px; box-sizing: border-box; padding: 11px 18px;}
 #applyFilter, #addFilter,#filterList select, #filter_tags .selectize-input.items.not-full.has-options, .pictureLevels select, #permitAction select{
 	font-family: "Open Sans", "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
