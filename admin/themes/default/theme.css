@@ -165,6 +165,8 @@ TABLE.languages TR TD { padding: 7px 20px; }
   width: 220px;
   margin: 15px;
   border-radius: 10px;
+
+  /* transition: 0.4s ease; */
 }
 
 .albumIcon {
@@ -204,7 +206,7 @@ TABLE.languages TR TD { padding: 7px 20px; }
 }
 
 .albumActions {
-  position: absolute;
+  /* position: absolute; */
   bottom: 5px;
   flex-direction: column;
   width: 90%;
@@ -312,7 +314,7 @@ TABLE.languages TR TD { padding: 7px 20px; }
 }
 
 .addAlbum.input-mode .addAlbumHead{
- transform: translateY(0px);
+ transform: translateY(0px) !important;
 }
 
 .addAlbum.input-mode form {
