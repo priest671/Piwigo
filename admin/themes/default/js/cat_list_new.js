@@ -2,91 +2,90 @@ function setDisplayTuile() {
 
     removeIconDesc();
 
-    /**
-     * Regrouper les changement css dans des objets
-     */
+    $(".categoryBox").css({
+        minWidth: "22%",
+        flexDirection: "column",
+        maxHeight: "200px"
+    });
 
-    $(".categoryBox").css("min-width", "22%");
-    $(".categoryBox").css("flex-direction", "column");
-    $(".categoryBox").css("max-height", "200px");
+    $(".addAlbum").css({
+        minWidth : "22%",
+        flexDirection: "column",
+        maxHeight: "200px"
+    });
 
+     $(".addAlbumHead").css({
+         flexDirection: "column",
+         transform: "translateY(75px)",
+         alignItems: "center",
+         marginTop: "-10px",
+         transition: "0.4s ease"
+    });
 
-    $(".addAlbum").css("min-width", "22%");
-    $(".addAlbum").css("flex-direction", "column");
-    $(".addAlbum").css("max-height", "200px");
+    $(".albumInfos").css({
+        marginLeft: "0",
+        flexDirection: "column"
+    });
 
-    $(".addAlbumHead").css("flex-direction", "column");
+    $(".albumTop").css({
+        width: "auto",
+        justifyContent: "center"
+    })
+
+    $(".addAlbum form").css("flex-direction", "column");
+    $(".addAlbum form input").css("margin", "0px 10px 0px 10px");
+    $(".addAlbum form button").css("margin", "10px auto 0 auto");
+
+    $(".albumInfos p").css("margin", "0")
+
     $(".addAlbumHead p").css("margin-left", "0");
-    $(".addAlbumHead").css("align-items", "center");
-    $(".addAlbumHead").css("margin-top", "-10px");
-
-    $(".addAlbum form").css("flex-direction", "column")
-    $(".addAlbum form input").css("margin", "0px 10px 0px 10px")
-    $(".addAlbum form button").css("margin", "10px auto 0 auto")
-
-    $(".addAlbumHead").css("transform", "translateY(75px)")
-    $(".addAlbumHead").css("transition", "0.4s ease")
-
     $(".albumActions").css("width", "100%");
 
-    $(".albumTop").css("width", "auto");
-
-    $(".albumInfos").css("margin-left", "0");
-    $(".albumInfos").css("flex-direction", "column");
-
-
-    // if ($(".addAlbum").hasClass("input-mode")) {
-    //     $(".addAlbum p").hide(300);
-    // }
-
-     
 }
 
 function setDisplayLine() {
 
-    /**
-     * Regrouper les changement css dans des objets
-     */
-    
     removeIconDesc();
-
-    
 
     $(".categoryBox").css({
         minWidth: "90%",
         flexDirection: "row",
         maxHeight: "75px"
-    })   
+    });
 
     $(".addAlbum").css({
         minWidth : "90%",
         flexDirection: "row",
         maxHeight: "75px"
+    });
+
+    $(".addAlbumHead").css({
+        flexDirection: "row",
+        transform: "translateY(0)",
+        alignItems: "center",
+        marginTop: "0",
+        transform: "translateX(200px)"
+    });
+
+    $(".albumInfos").css({
+        marginLeft: "auto",
+        flexDirection: "row"
+    });
+
+    $(".albumTop").css({
+        width: "30%",
+        justifyContent: "flex-start"
     })
 
-    $(".addAlbumHead").css("flex-direction", "row");
+    $(".addAlbum form").css("flex-direction", "row");
+    $(".addAlbum form").css("align-items", "center");
+    $(".addAlbum form button").css("margin", "0px 20px");
+
+    $(".albumInfos p").css("margin", "0 20px")
+
     $(".addAlbumHead p").css("margin-left", "15px");
-    $(".addAlbumHead").css("align-items", "baseline");
-    $(".addAlbumHead").css("margin-top", "0");
-
-    $(".addAlbum form").css("flex-direction", "row")
-    $(".addAlbum form").css("align-items", "center")
-
-    // $(".addAlbum form input").css("margin", "0px 10px 0px 10px")
-    $(".addAlbum form button").css("margin", "0px 20px")
-
-
-    $(".addAlbumHead").css("padding", "0")
-    $(".addAlbumHead").css("transform", "translateY(0)")
-
-    $(".addAlbumHead").css("transform", "translateX(75px)")
-
     $(".albumActions").css("width", "300px");
-
-    $(".albumTop").css("width", "30%");
-
-    $(".albumInfos").css("margin-left", "auto");
-    $(".albumInfos").css("flex-direction", "row");
+ 
 }
 
 
@@ -121,12 +120,10 @@ $(document).ready(function () {
     };
 
     $("#displayTuile").change(function () {
-        console.log("I'm tuiled");
         setDisplayTuile()
     })
 
     $("#displayLine").change(function () {
-        console.log("I'm lined");
         setDisplayLine()
     })
 

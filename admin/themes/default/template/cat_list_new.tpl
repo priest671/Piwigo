@@ -156,7 +156,7 @@ jQuery(document).ready(function(){
 }
 
 .albumInfos p {
-  margin: 0 5px;
+  margin: 0 20px;
   text-align: right;
 }
 
@@ -203,6 +203,10 @@ jQuery(document).ready(function(){
 .addAlbum form button {
   margin-bottom: 0;
   height: 30px;
+}
+
+.addAlbumHead {
+  padding: 0;
 }
 
 </style>
