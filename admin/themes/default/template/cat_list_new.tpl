@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 <div class="selectedAlbum cat-list-album-path">
   <span class="icon-sitemap selectedAlbum-first">{$CATEGORIES_NAV}</span>
   <div class="selectedAlbum-last">
-    <input type="radio" name="layout" class="switchLayout" id="displayTuile" checked/><label for="displayTuile"><span class="icon-th-large"></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></label><input type="radio" name="layout" class="switchLayout" id="displayAutre"/><label for="displayAutre"><span class="icon-pause"></label>
+    <input type="radio" name="layout" class="switchLayout" id="displayTuile" checked/><label for="displayTuile"><span class="icon-th-large"></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause"></label>
   </div>
 </div>
 {assign var='color_tab' value=["icon-red", "icon-blue", "icon-yellow", "icon-purple", "icon-green"]}
@@ -49,6 +49,7 @@ jQuery(document).ready(function(){
         {$category.NAME}
       </div>
     </div>
+    
     <span class="albumInfos"><p>{$category.NB_PHOTOS|translate_dec:'%d photo':'%d photos'}</p> <p>{$category.NB_SUB_PHOTOS|translate_dec:'%d photo':'%d photos'} {$category.NB_SUB_ALBUMS|translate_dec:'in %d sub-album':'in %d sub-albums'}</p></span>
 
     <div class="albumActions">
@@ -89,7 +90,7 @@ jQuery(document).ready(function(){
   padding: 10px 0px;
   margin-right: 50px;
   border-radius: 10px;
-  background: #fafafa !important;
+  background: transparent !important;
 }
 
 .icon-th-large, .icon-th-list, .icon-pause {
@@ -117,7 +118,7 @@ jQuery(document).ready(function(){
 }
 
 /*
- *  Default display of albums (Tiles)
+ *  Tiles display
  */
 
 
@@ -137,13 +138,14 @@ jQuery(document).ready(function(){
   max-height: 200px;
   min-width: 22%;
 
+  /* Potential Animation */
   /* transition: 1s linear; */
 }
 
 .albumIcon span{
-  font-size: 15px;
-  width: 21px;
-  padding: 5px;
+  font-size: 19px;
+  width: 27px;
+  padding: 10px;
   border-radius: 30px;
 }
 
@@ -168,11 +170,7 @@ jQuery(document).ready(function(){
   margin-top: auto;
 
   width: 100%;
-  margin-bottom: 20px;
-}
-
-.albumActions a span{
-  font-size: 17px;
+  margin-bottom: auto;
 }
 
 .albumActions a:first-child{
