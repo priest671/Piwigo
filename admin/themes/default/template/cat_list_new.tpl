@@ -136,7 +136,7 @@ jQuery(document).ready(function(){
   display: flex;
   flex-direction: column;
   max-height: 200px;
-  min-width: 22%;
+  flex-grow: 1;
 
   /* Potential Animation */
   /* transition: 1s linear; */

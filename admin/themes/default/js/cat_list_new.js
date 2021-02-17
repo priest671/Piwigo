@@ -2,9 +2,15 @@ function setDisplayTuile() {
 
     removeIconDesc();
     removeHoverOnAlbumActions();
+    $(".categoryBox").hover(function () {
+        $(this).css("background", "#fafafa");
+    }, function () {
+        $(this).css("background", "#fafafa");
+    })
 
     $(".categoryBox").css({
-        minWidth: "22%",
+        minWidth: "240px",
+        maxWidth: "280px",
         flexDirection: "column",
         maxHeight: "200px",
         alignItems: "unset"
@@ -28,7 +34,8 @@ function setDisplayTuile() {
     $(".albumTitle").css("padding", "0 15px");
 
     $(".addAlbum").css({
-        minWidth : "22%",
+        minWidth : "240px",
+        maxWidth: "280px",
         flexDirection: "column",
         maxHeight: "200px"
     });
@@ -61,6 +68,11 @@ function setDisplayLine() {
 
     removeIconDesc();
     removeHoverOnAlbumActions();
+    $(".categoryBox").hover(function () {
+        $(this).css("background", "#ffc17e");
+    }, function () {
+        $(this).css("background", "#fafafa");
+    })
 
     $(".categoryBox").css({
         minWidth: "90%",
@@ -122,6 +134,11 @@ function setDisplayDefault() {
     gotIconDesc();
 
     AddHoverOnAlbumActions();
+        $(".categoryBox").hover(function () {
+        $(this).css("background", "#fafafa");
+    }, function () {
+        $(this).css("background", "#fafafa");
+    })
 
     $(".categoryBox").css({
         minWidth: "220px",
