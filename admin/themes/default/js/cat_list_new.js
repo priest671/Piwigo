@@ -223,7 +223,6 @@ function AddHoverOnAlbumActions() {
 
 
 $(document).ready(function () {
-    console.log("hello world");
 
     $(".addAlbum").on("click", function (e) {
         if (e.target.className !== "cancelAddAlbum") {
@@ -245,6 +244,10 @@ $(document).ready(function () {
         setDisplayLine();
     };
 
+    if ($("#displayDefault").is(":checked")) {
+        setDisplayDefault();
+    };
+
     $("#displayTuile").change(function () {
         setDisplayTuile();
     })
@@ -254,7 +257,6 @@ $(document).ready(function () {
     })
 
     $("#displayDefault").change(function () {
-        console.log("I'm in default mode");
         setDisplayDefault();
     })
 
