@@ -12,8 +12,8 @@ jQuery(document).ready(function(){
 
 <div class="selectedAlbum cat-list-album-path">
   <span class="icon-sitemap selectedAlbum-first">{$CATEGORIES_NAV}</span>
-  <div class="selectedAlbum-last">
-    <input type="radio" name="layout" class="switchLayout" id="displayTuile" checked/><label for="displayTuile"><span class="icon-th-large"></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause"></label>
+  <div class="AlbumViewSelector">
+    <input type="radio" name="layout" class="switchLayout" id="displayTuile" checked/><label for="displayTuile"><span class="icon-th-large firstIcon"></span></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon"></span></label>
   </div>
 </div>
 {assign var='color_tab' value=["icon-red", "icon-blue", "icon-yellow", "icon-purple", "icon-green"]}
@@ -74,23 +74,44 @@ jQuery(document).ready(function(){
  *  Switch btn between views
  */
 
+ #tabsheet , .selectedAlbum{
+   margin: 0 0 10px 0 !important;
+ }
+
 .selectedAlbum {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
+  padding: 0 34px 0 24px;
+
   align-items: baseline;
 }
 
 .selectedAlbum-first {
-  margin-left: 50px;
+  margin-left: 0px;
 }
 
-.selectedAlbum-last {
-  padding: 10px 0px;
-  margin-right: 50px;
+.AlbumViewSelector {
+  padding: 7px 0px;
+  margin-right: 0px;
   border-radius: 10px;
-  background: transparent !important;
+  background: #fafafa !important;
+}
+
+.AlbumViewSelector span {
+  border-radius: 0;
+  padding: 7px;
+}
+
+/* Should be done with :first-child and :last-child but doesn't work */
+
+.AlbumViewSelector label span.firstIcon{
+  border-radius: 7px 0 0 7px;
+}
+
+.AlbumViewSelector label span.lastIcon{
+  border-radius: 0 7px 7px 0;
 }
 
 .icon-th-large, .icon-th-list, .icon-pause {
@@ -100,12 +121,12 @@ jQuery(document).ready(function(){
   transition: 0.3s;
 }
 
-.selectedAlbum-last input:checked + label{
+.AlbumViewSelector input:checked + label{
   background: transparent;
   color: white !important;
 }
 
-.selectedAlbum-last input:checked + label span{
+.AlbumViewSelector input:checked + label span{
   background: orange;
 }
 
@@ -116,6 +137,12 @@ jQuery(document).ready(function(){
 .albumActions a span.iconLegend {
   font-size: 14px;
 }
+
+
+.categoryContainer {
+  padding: 0 20px 0 20px;
+}
+
 
 /*
  *  Tiles display

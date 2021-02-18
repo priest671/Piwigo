@@ -9,8 +9,8 @@ function setDisplayTuile() {
     })
 
     $(".categoryBox").css({
-        minWidth: "240px",
-        maxWidth: "280px",
+        minWidth: "230px",
+        maxWidth: "350px",
         flexDirection: "column",
         maxHeight: "200px",
         alignItems: "unset"
@@ -34,8 +34,8 @@ function setDisplayTuile() {
     $(".albumTitle").css("padding", "0 15px");
 
     $(".addAlbum").css({
-        minWidth : "240px",
-        maxWidth: "280px",
+        minWidth : "230px",
+        maxWidth: "350px",
         flexDirection: "column",
         maxHeight: "200px"
     });
@@ -75,7 +75,7 @@ function setDisplayLine() {
     })
 
     $(".categoryBox").css({
-        minWidth: "90%",
+        minWidth: "98%",
         flexDirection: "row",
         maxHeight: "75px",
         alignItems: "unset"
@@ -97,7 +97,7 @@ function setDisplayLine() {
     $(".albumTitle").css("padding", "0 15px");
 
     $(".addAlbum").css({
-        minWidth : "90%",
+        minWidth : "98%",
         flexDirection: "row",
         maxHeight: "75px"
     });
