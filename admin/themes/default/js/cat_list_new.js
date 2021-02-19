@@ -1,11 +1,18 @@
-function setDisplayTuile() {
+function setDisplayTile() {
 
     removeIconDesc();
-    removeHoverOnAlbumActions();
-    $(".categoryBox").hover(function () {
-        $(this).css("background", "#fafafa");
+
+    $(".albumActions").css("display", "flex");
+    removeHoverEffect($(".categoryBox"));
+    removeHoverEffect($(".categoryBox").children(".albumActions").children("a"));
+    $(".categoryBox").children(".albumActions").children("a").hover(function () {
+        $(this).css({
+            color : "#FFA646"
+        })
     }, function () {
-        $(this).css("background", "#fafafa");
+        $(this).css({
+            color : "#848484"
+        })
     })
 
     $(".categoryBox").css({
@@ -13,7 +20,8 @@ function setDisplayTuile() {
         maxWidth: "350px",
         flexDirection: "column",
         maxHeight: "200px",
-        alignItems: "unset"
+        alignItems: "unset",
+        margin: "15px"
     });
 
     $(".albumInfos").css({
@@ -21,7 +29,20 @@ function setDisplayTuile() {
         flexDirection: "column"
     });
 
+    $(".albumIcon").css({
+        height: "80px"
+    });
+
+    $(".albumIcon span").css({
+        fontSize: "19px",
+        width: "27px",
+        padding: "10px"
+    });
+
     $(".albumInfos p").css("margin", "0");
+    $(".albumInfos p:last-child").css({
+        width: "auto"
+    });
 
     $(".albumTop").css({
         width: "auto",
@@ -37,7 +58,8 @@ function setDisplayTuile() {
         minWidth : "230px",
         maxWidth: "350px",
         flexDirection: "column",
-        maxHeight: "200px"
+        maxHeight: "200px",
+        margin: "15px"
     });
 
      $(".addAlbumHead").css({
@@ -54,6 +76,13 @@ function setDisplayTuile() {
 
     $(".addAlbumHead p").css("margin-left", "0");
 
+    $(".addAlbumHead span").css({
+        fontSize:"19px",
+        width: "27px",
+        height: "27px",
+        padding: "10px"
+    })
+
     $(".albumActions").css({
         flexDirection : "row",
         marginTop: "auto",
@@ -66,28 +95,93 @@ function setDisplayTuile() {
 
 function setDisplayLine() {
 
+    /*********** Hover stuff ***********/
+
     removeIconDesc();
-    removeHoverOnAlbumActions();
+    $(".albumActions").css("display", "flex");
+    removeHoverEffect($(".categoryBox"));
+
     $(".categoryBox").hover(function () {
-        $(this).css("background", "#ffc17e");
+        $(this).css("background", "#ffd7ad");
+        $(this).children(".albumInfos").css({
+            color: "#515151"
+        });
+        $(this).children(".albumActions").children("a").css({
+            color: "#515151",
+        });
+
+        $(this).children(".albumTop").children(".albumIcon").children("span").addClass("albumIconLineHover");
+
     }, function () {
         $(this).css("background", "#fafafa");
+        $(this).children(".albumInfos").css({
+            color: "#a9a9a9"
+        });
+        $(this).children(".albumActions").children("a").css({
+            color: "#848484"
+        });        
+        
+        $(this).children(".albumTop").children(".albumIcon").children("span").removeClass("albumIconLineHover");
     })
 
-    $(".categoryBox").css({
-        minWidth: "98%",
-        flexDirection: "row",
-        maxHeight: "75px",
-        alignItems: "unset"
+    $(".categoryBox").children(".albumActions").children("a").hover(function () {
+        $(this).css({
+            color : "#f98100",
+            transform: "scale(1.5)"
+        });
+    }, function () {
+        $(this).css({
+            color : "#515151",
+            transform: "scale(1)"
+        });
     });
+
+    /************************************/
+
+    $(".categoryBox").css({
+        minWidth: "90%",
+        maxWidth: "100%",
+        flexDirection: "row",
+        maxHeight: "60px",
+        alignItems: "unset",
+        margin: "5px 15px"
+    });
+
+    $(".albumIcon").css({
+        height: "60px"
+    });
+
+    $(".albumIcon span").css({
+        fontSize: "14px",
+        width: "20px",
+        padding: "8px"
+    });
+    
+    $(".addAlbumHead span").css({
+        fontSize:"14px",
+        width: "20px",
+        height: "20px",
+        padding: "8px"
+    })
 
     $(".albumInfos").css({
         marginLeft: "auto",
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "space-around",
+        width: "auto"
+    });
+
+    $(".albumInfos p").css({
+        textAlign: "right",
+        margin: "0"
+    });
+
+    $(".albumInfos p:last-child").css({
+        width: "270px"
     });
 
     $(".albumTop").css({
-        width: "30%",
+        width: "25%",
         justifyContent: "flex-start",
         flexDirection: "row",
         alignItems : "baseline",
@@ -97,9 +191,11 @@ function setDisplayLine() {
     $(".albumTitle").css("padding", "0 15px");
 
     $(".addAlbum").css({
-        minWidth : "98%",
+        minWidth: "90%",
+        maxWidth: "100%",
         flexDirection: "row",
-        maxHeight: "75px"
+        maxHeight: "60px",
+        margin: "15px 15px 5px 15px"
     });
 
     $(".addAlbumHead").css({
@@ -116,8 +212,6 @@ function setDisplayLine() {
 
     $(".addAlbumHead p").css("margin-left", "15px");
 
-    $(".albumInfos p").css("margin", "0 20px")
-
     $(".albumActions").css({
         flexDirection : "row",
         marginTop: "auto",
@@ -126,25 +220,35 @@ function setDisplayLine() {
 
     $(".albumActions a:first-child").css("margin-left", "35px");
     $(".albumActions a:last-child").css("margin-right", "35px");
- 
+
 }
 
 function setDisplayDefault() {
 
-    gotIconDesc();
+    ShowIconDesc();
+
+    $(".albumActions").css("display", "flex");
+    removeHoverEffect($(".categoryBox"));
+    removeHoverEffect($(".categoryBox").children(".albumActions").children("a"));
+    $(".categoryBox").children(".albumActions").children("a").hover(function () {
+        $(this).css({
+            color : "#FFA646"
+        })
+    }, function () {
+        $(this).css({
+            color : "#848484"
+        })
+    });
 
     AddHoverOnAlbumActions();
-        $(".categoryBox").hover(function () {
-        $(this).css("background", "#fafafa");
-    }, function () {
-        $(this).css("background", "#fafafa");
-    })
 
     $(".categoryBox").css({
         minWidth: "220px",
+        maxWidth: "280px",
         flexDirection: "column",
         maxHeight: "300px",
-        alignItems: "center"
+        alignItems: "center",
+        margin: "15px"
     });
 
     $(".albumActions").css({
@@ -159,6 +263,20 @@ function setDisplayDefault() {
         flexDirection: "column",
     });
 
+    $(".albumInfos p:last-child").css({
+        width: "auto"
+    });
+
+    $(".albumIcon").css({
+        height: "80px"
+    });
+
+    $(".albumIcon span").css({
+        fontSize: "19px",
+        width: "27px",
+        padding: "10px"
+    });
+
     $(".albumTop").css({
         width: "85%",
         flexDirection: "column",
@@ -169,9 +287,11 @@ function setDisplayDefault() {
     $(".albumTitle").css("padding", "0");
 
     $(".addAlbum").css({
-        minWidth : "220px",
+        minWidth: "220px",
+        maxWidth: "280px",
         flexDirection: "column",
-        maxHeight: "300px"
+        maxHeight: "300px",
+        margin: "15px"
     });
 
      $(".addAlbumHead").css({
@@ -188,6 +308,13 @@ function setDisplayDefault() {
 
     $(".addAlbumHead p").css("margin-left", "0");
 
+    $(".addAlbumHead span").css({
+        fontSize:"19px",
+        width: "27px",
+        height: "27px",
+        padding: "10px"
+    })
+
     $(".albumInfos p").css("margin", "0")
 
     $(".albumActions a:first-child").css("margin-left", "5px")
@@ -195,7 +322,7 @@ function setDisplayDefault() {
 }
 
 
-function gotIconDesc() {
+function ShowIconDesc() {
     $(".albumActions span.iconLegend").show();
 }
 
@@ -203,13 +330,8 @@ function removeIconDesc() {
     $(".albumActions span.iconLegend").hide();
 }
 
-function removeHoverOnAlbumActions() {
-    $(".albumActions").css("display", "flex");
-    $(".categoryBox").hover(function () {
-        $(this).children(".albumActions").css("display", "flex");
-    }, function () {
-        $(this).children(".albumActions").css("display", "flex");
-    })
+function removeHoverEffect(e) {
+    e.unbind('mouseenter').unbind('mouseleave');
 }
 
 function AddHoverOnAlbumActions() {
@@ -236,8 +358,8 @@ $(document).ready(function () {
         $(".addAlbum p").show(800);
     })
 
-    if ($("#displayTuile").is(":checked")) {
-        setDisplayTuile();
+    if ($("#displayTile").is(":checked")) {
+        setDisplayTile();
     };
 
     if ($("#displayLine").is(":checked")) {
@@ -248,8 +370,8 @@ $(document).ready(function () {
         setDisplayDefault();
     };
 
-    $("#displayTuile").change(function () {
-        setDisplayTuile();
+    $("#displayTile").change(function () {
+        setDisplayTile();
     })
 
     $("#displayLine").change(function () {

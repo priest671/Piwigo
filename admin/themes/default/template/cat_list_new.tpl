@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 <div class="selectedAlbum cat-list-album-path">
   <span class="icon-sitemap selectedAlbum-first">{$CATEGORIES_NAV}</span>
   <div class="AlbumViewSelector">
-    <input type="radio" name="layout" class="switchLayout" id="displayTuile" checked/><label for="displayTuile"><span class="icon-th-large firstIcon"></span></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon"></span></label>
+    <input type="radio" name="layout" class="switchLayout" id="displayTile" checked/><label for="displayTile"><span class="icon-th-large firstIcon"></span></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon"></span></label>
   </div>
 </div>
 {assign var='color_tab' value=["icon-red", "icon-blue", "icon-yellow", "icon-purple", "icon-green"]}
@@ -83,7 +83,7 @@ jQuery(document).ready(function(){
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 0 34px 0 24px;
+  padding: 0 34px 0 22px;
 
   align-items: baseline;
 }
@@ -143,11 +143,9 @@ jQuery(document).ready(function(){
   padding: 0 20px 0 20px;
 }
 
-
 /*
  *  Tiles display
  */
-
 
 .albumTop {
   display: flex;
@@ -174,6 +172,12 @@ jQuery(document).ready(function(){
   width: 27px;
   padding: 10px;
   border-radius: 30px;
+}
+
+.albumIconLineHover {
+  background: #f98100! important;
+  color: #ffd7ad;
+  transition: 0.5s ease;
 }
 
 .albumInfos {
