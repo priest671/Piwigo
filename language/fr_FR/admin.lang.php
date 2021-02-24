@@ -1120,3 +1120,6 @@ $lang['Created on %s'] = 'Créé le %s';
 $lang['Edited on %s'] = 'Modifié le %s';
 $lang['%d sub-albums'] = '%d sous-albums';
 $lang['Refresh thumbnail'] = 'Changer de miniature';
+$lang['Compact View'] = 'Affichage compact';
+$lang['Tile View'] = 'Affichage tuiles';
+$lang['Line View'] = 'Affichage lignes';
