@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 <div class="selectedAlbum cat-list-album-path">
   <span class="icon-sitemap selectedAlbum-first">{$CATEGORIES_NAV}</span>
   <div class="AlbumViewSelector">
-    <input type="radio" name="layout" class="switchLayout" id="displayTile" checked/><label for="displayTile"><span class="icon-th-large firstIcon"></span></label><input type="radio" name="layout" class="switchLayout" id="displayLine"/><label for="displayLine"><span class="icon-th-list"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon"></span></label>
+    <input type="radio" name="layout" class="switchLayout" id="displayTile" checked/><label for="displayTile"><span class="icon-th-large firstIcon tiptip" title="{'Compact View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout tiptip" id="displayLine"/><label for="displayLine"><span class="icon-th-list tiptip" title="{'Line View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon tiptip" title="{'Tile View'|translate}"></span></label>
   </div>
 </div>
 {assign var='color_tab' value=["icon-red", "icon-blue", "icon-yellow", "icon-purple", "icon-green"]}
@@ -25,8 +25,8 @@ jQuery(document).ready(function(){
     </div>
     <form action="{$F_ACTION}" method="post">
       <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
-      {* <label for="virtual_name">{"Album Name"|@translate}</label> *}
-      <input type="text" name="virtual_name" placeholder="{"Nom de l'album..."|@translate}">
+      <label for="virtual_name">{"Album Name"|@translate}</label>
+      <input type="text" name="virtual_name" placeholder="{"Album name"|@translate}">
       <button name="submitAdd" type="submit" class="buttonLike">
           <i class="icon-plus"></i> {"Create"|@translate}
         </button>

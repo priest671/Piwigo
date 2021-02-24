@@ -62,6 +62,10 @@ function setDisplayTile() {
         margin: "15px"
     });
 
+    $(".addAlbum form label").css({
+        display: "none"
+    });
+
      $(".addAlbumHead").css({
          flexDirection: "column",
          transform: "translateY(75px)",
@@ -73,6 +77,7 @@ function setDisplayTile() {
     $(".addAlbum form").css("flex-direction", "column");
     $(".addAlbum form input").css("margin", "0px 10px 0px 10px");
     $(".addAlbum form button").css("margin", "10px auto 0 auto");
+    $(".addAlbum p").css("margin-bottom", "0px")
 
     $(".addAlbumHead p").css("margin-left", "0");
 
@@ -198,6 +203,10 @@ function setDisplayLine() {
         margin: "15px 15px 5px 15px"
     });
 
+    $(".addAlbum form label").css({
+        display: "none"
+    });
+
     $(".addAlbumHead").css({
         flexDirection: "row",
         transform: "translateY(0)",
@@ -209,13 +218,14 @@ function setDisplayLine() {
     $(".addAlbum form").css("flex-direction", "row");
     $(".addAlbum form").css("align-items", "center");
     $(".addAlbum form button").css("margin", "0px 20px");
+    $(".addAlbum p").css("margin-bottom", "0px")
 
     $(".addAlbumHead p").css("margin-left", "15px");
 
     $(".albumActions").css({
         flexDirection : "row",
-        marginTop: "auto",
-        width: "300px"
+        margin: "auto 0px",
+        width: "300px",
     })
 
     $(".albumActions a:first-child").css("margin-left", "35px");
@@ -305,6 +315,12 @@ function setDisplayDefault() {
     $(".addAlbum form").css("flex-direction", "column");
     $(".addAlbum form input").css("margin", "0px 10px 0px 10px");
     $(".addAlbum form button").css("margin", "10px auto 0 auto");
+    $(".addAlbum p").css("margin-bottom", "20px")
+
+    $(".addAlbum form label").css({
+        display: "flex",
+        margin: "-20px 0 0 10px"
+    });
 
     $(".addAlbumHead p").css("margin-left", "0");
 
@@ -315,7 +331,12 @@ function setDisplayDefault() {
         padding: "10px"
     })
 
-    $(".albumInfos p").css("margin", "0")
+    $(".albumInfos p").css("margin", "0");
+
+    $(".albumActions").css({
+        width: "auto",
+        margin: "0px auto auto auto"
+    })
 
     $(".albumActions a:first-child").css("margin-left", "5px")
     $(".albumActions a:last-child").css("margin-left", "5px")
@@ -346,10 +367,16 @@ function AddHoverOnAlbumActions() {
 
 $(document).ready(function () {
 
+    var displayType = ""
+
     $(".addAlbum").on("click", function (e) {
         if (e.target.className !== "cancelAddAlbum") {
             $(".addAlbum").addClass('input-mode');
-            $(".addAlbum p").hide(300);
+
+            if (displayType !== "default") {
+                $(".addAlbum p").hide(300);
+            }
+            
         };
     })
 
@@ -360,26 +387,47 @@ $(document).ready(function () {
 
     if ($("#displayTile").is(":checked")) {
         setDisplayTile();
+        displayType = "tile"
     };
 
     if ($("#displayLine").is(":checked")) {
         setDisplayLine();
+        displayType = "line"
     };
 
     if ($("#displayDefault").is(":checked")) {
         setDisplayDefault();
+        displayType = "default"
     };
 
     $("#displayTile").change(function () {
         setDisplayTile();
+
+        if ($(".addAlbum").hasClass("input-mode")) {
+            $(".addAlbum p").hide();
+        }
+
+        displayType = "tile"
     })
 
     $("#displayLine").change(function () {
         setDisplayLine();
+
+        if ($(".addAlbum").hasClass("input-mode")) {
+            $(".addAlbum p").hide();
+        }
+
+        displayType = "line"
     })
 
     $("#displayDefault").change(function () {
         setDisplayDefault();
+
+        if ($(".addAlbum").hasClass("input-mode")) {
+            $(".addAlbum p").show();
+        }
+
+        displayType = "default"
     })
 
 })
