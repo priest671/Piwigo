@@ -53,14 +53,14 @@ jQuery(document).ready(function(){
     <span class="albumInfos"><p>{$category.NB_PHOTOS|translate_dec:'%d photo':'%d photos'}</p> <p>{$category.NB_SUB_PHOTOS|translate_dec:'%d photo':'%d photos'} {$category.NB_SUB_ALBUMS|translate_dec:'in %d sub-album':'in %d sub-albums'}</p></span>
 
     <div class="albumActions">
-      <a href="{$category.U_EDIT}" class="actionEdit" title="{'Edit'|@translate}"><span class="icon-pencil"></span><span class="iconLegend">{'Edit'|@translate}</span></a>
-      <a href="{$category.U_CHILDREN}" class="actionTitle" title="{'sub-albums'|@translate}"><span class="icon-sitemap"></span><span class="iconLegend">{'sub-albums'|@translate}</span></a>
+      <a href="{$category.U_EDIT}" class="actionEdit" {*title="{'Edit'|@translate}"*}><span class="icon-pencil tiptip" title="{'Edit'|@translate}"></span><span class="iconLegend">{'Edit'|@translate}</span></a>
+      <a href="{$category.U_CHILDREN}" class="actionTitle" {*title="{'sub-albums'|@translate}"*}><span class="icon-sitemap tiptip" title="{'sub-albums'|@translate}"></span><span class="iconLegend">{'sub-albums'|@translate}</span></a>
       {if cat_admin_access($category.ID)}
-      <a href="{$category.U_JUMPTO}" class="actionGalery" title="{'Visit Gallery'|@translate}"><span class="icon-eye"></span><span class="iconLegend">{'Visit Gallery'|@translate}</span></a>
+      <a href="{$category.U_JUMPTO}" class="actionGalery" {*title="{'Visit Gallery'|@translate}"*}><span class="icon-eye tiptip" title="{'Visit Gallery'|@translate}"></span><span class="iconLegend">{'Visit Gallery'|@translate}</span></a>
       {else}
-      <span href="{$category.U_JUMPTO}" class="actionGalery" title="{'This album is private'|@translate}"><span class="icon-eye"></span><span class="iconLegend">{'Visit Gallery'|@translate}</span></span>
+      <span href="{$category.U_JUMPTO}" class="actionGalery" {*title="{'This album is private'|@translate}"*}><span class="icon-eye tiptip" title="{'This album is private'|@translate}"></span><span class="iconLegend">{'Visit Gallery'|@translate}</span></span>
       {/if}
-      <a href="{$category.U_ADD_PHOTOS_ALBUM}" class="actionAdd" title="{'Add Photos'|@translate}"><span class="icon-plus"></span><span class="iconLegend">{'Add Photos'|@translate}</span></a>
+      <a href="{$category.U_ADD_PHOTOS_ALBUM}" class="actionAdd" {*title="{'Add Photos'|@translate}"*}><span class="icon-plus tiptip" title="{'Add Photos'|@translate}"></span><span class="iconLegend">{'Add Photos'|@translate}</span></a>
     </div>
   </div>
     {/foreach}
