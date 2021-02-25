@@ -1121,3 +1121,4 @@ $lang['Refresh thumbnail'] = 'Refresh thumbnail';
 $lang['Compact View'] = 'Compact View';
 $lang['Tile View'] = 'Tile View';
 $lang['Line View'] = 'Line View';
+$lang['Add Album'] = 'Add Album';

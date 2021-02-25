@@ -1123,3 +1123,4 @@ $lang['Refresh thumbnail'] = 'Changer de miniature';
 $lang['Compact View'] = 'Affichage compact';
 $lang['Tile View'] = 'Affichage tuiles';
 $lang['Line View'] = 'Affichage lignes';
+$lang['Add Album'] = 'Ajouter un Album';
