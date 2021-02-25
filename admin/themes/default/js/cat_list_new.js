@@ -86,11 +86,11 @@ function setDisplayCompact() {
 
     $(".addAlbum.input-mode form").css({
         transitionDelay: "0.4s",
-    })
+    });
 
     $(".addAlbum form input").css("margin", "0px 10px 0px 10px");
     $(".addAlbum form button").css("margin", "10px auto 0 auto");
-    $(".addAlbum p").css("margin-bottom", "0px")
+    $(".addAlbum p").css("margin-bottom", "0px");
 
     $(".addAlbumHead p").css("margin-left", "0");
 
@@ -99,13 +99,13 @@ function setDisplayCompact() {
         width: "27px",
         height: "27px",
         padding: "10px"
-    })
+    });
 
     $(".albumActions").css({
         flexDirection : "row",
         marginTop: "auto",
         width: "100%"
-    })
+    });
 
     $(".albumActions a:first-child").css("margin-left", "35px");
     $(".albumActions a:last-child").css("margin-right", "35px");
@@ -178,7 +178,7 @@ function setDisplayLine() {
         width: "20px",
         height: "20px",
         padding: "8px"
-    })
+    });
 
     $(".albumInfos").css({
         marginLeft: "auto",
@@ -235,12 +235,12 @@ function setDisplayLine() {
 
     $(".addAlbum.input-mode form").css({
         transitionDelay: "0s",
-    })
+    });
 
     $(".addAlbum form").css("align-items", "center");
     $(".addAlbum form input").css("margin", "0px 10px 0px 10px");
     $(".addAlbum form button").css("margin", "0px 20px");
-    $(".addAlbum p").css("margin-bottom", "0px")
+    $(".addAlbum p").css("margin-bottom", "0px");
 
     $(".addAlbumHead p").css("margin-left", "15px");
 
@@ -248,7 +248,7 @@ function setDisplayLine() {
         flexDirection : "row",
         margin: "auto 0px",
         width: "300px",
-    })
+    });
 
     $(".albumActions a:first-child").css("margin-left", "35px");
     $(".albumActions a:last-child").css("margin-right", "35px");
@@ -276,7 +276,7 @@ function setDisplayTile() {
 
     $(".addAlbum.input-mode form").css({
         transitionDelay: "0s",
-    })
+    });
 
     $(".categoryBox").css({
         minWidth: "220px",
@@ -347,7 +347,7 @@ function setDisplayTile() {
 
     $(".addAlbum form input").css("margin", "0px 10px 10px 10px");
     $(".addAlbum form button").css("margin", "10px auto 0 auto");
-    $(".addAlbum p").css("margin-bottom", "20px")
+    $(".addAlbum p").css("margin-bottom", "20px");
 
     $(".addAlbum form label").css({
         display: "flex",
@@ -361,12 +361,12 @@ function setDisplayTile() {
         width: "27px",
         height: "27px",
         padding: "10px"
-    })
+    });
 
     $(".albumInfos p").css("margin", "0");
 
-    $(".albumActions a:first-child").css("margin-left", "5px")
-    $(".albumActions a:last-child").css("margin-left", "5px")
+    $(".albumActions a:first-child").css("margin-left", "5px");
+    $(".albumActions a:last-child").css("margin-left", "5px");
 }
 
 
@@ -388,7 +388,7 @@ function AddHoverOnAlbumActions() {
         $(this).children(".albumActions").css("display", "flex");
     }, function () {
         $(this).children(".albumActions").css("display", "none");
-    })
+    });
 }
 
 
@@ -404,28 +404,27 @@ $(document).ready(function () {
             if (displayType !== "tile") {
                 $(".addAlbum p").hide(300);
             }
-            
         };
-    })
+    });
 
     $(".cancelAddAlbum").on("click", function () {
         $('.addAlbum').removeClass('input-mode');
         $(".addAlbum p").show(800);
-    })
+    });
 
     if ($("#displayCompact").is(":checked")) {
         setDisplayCompact();
-        displayType = "compact"
+        displayType = "compact";
     };
 
     if ($("#displayLine").is(":checked")) {
         setDisplayLine();
-        displayType = "line"
+        displayType = "line";
     };
 
     if ($("#displayTile").is(":checked")) {
         setDisplayTile();
-        displayType = "tile"
+        displayType = "tile";
     };
 
     $("#displayCompact").change(function () {
@@ -434,11 +433,10 @@ $(document).ready(function () {
         if ($(".addAlbum").hasClass("input-mode")) {
             $(".addAlbum p").hide();
         }
-
         
         $.cookie("pwg_album_manager_view", "compact", { expires : 20*365 });
-        displayType = "compact"
-    })
+        displayType = "compact";
+    });
 
     $("#displayLine").change(function () {
         setDisplayLine();
@@ -448,8 +446,8 @@ $(document).ready(function () {
         }
 
         $.cookie("pwg_album_manager_view", "line" , { expires : 20*365 });
-        displayType = "line"
-    })
+        displayType = "line";
+    });
 
     $("#displayTile").change(function () {
         setDisplayTile();
@@ -459,7 +457,6 @@ $(document).ready(function () {
         }
 
         $.cookie("pwg_album_manager_view", "tile", { expires : 20*365 });
-        displayType = "tile"
-    })
-
-})
+        displayType = "tile";
+    });
+});
