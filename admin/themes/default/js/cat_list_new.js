@@ -436,7 +436,7 @@ $(document).ready(function () {
         }
 
         
-        $.cookie("pwg_album_manager_view", "compact");
+        $.cookie("pwg_album_manager_view", "compact", { expires : 20*365 });
         displayType = "compact"
     })
 
@@ -447,7 +447,7 @@ $(document).ready(function () {
             $(".addAlbum p").hide();
         }
 
-        $.cookie("pwg_album_manager_view", "line");
+        $.cookie("pwg_album_manager_view", "line" , { expires : 20*365 });
         displayType = "line"
     })
 
@@ -458,7 +458,7 @@ $(document).ready(function () {
             $(".addAlbum p").show();
         }
 
-        $.cookie("pwg_album_manager_view", "tile");
+        $.cookie("pwg_album_manager_view", "tile", { expires : 20*365 });
         displayType = "tile"
     })
 
