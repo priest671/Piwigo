@@ -20,7 +20,7 @@ function setDisplayCompact() {
         minWidth: "230px",
         maxWidth: "350px",
         flexDirection: "column",
-        maxHeight: "200px",
+        maxHeight: "180px",
         alignItems: "unset",
         margin: "15px"
     });
@@ -30,14 +30,24 @@ function setDisplayCompact() {
         flexDirection: "column"
     });
 
+    // $(".albumIcon").css({
+    //     height: "80px"
+    // });
+
+    // $(".albumIcon span").css({
+    //     fontSize: "19px",
+    //     width: "27px",
+    //     padding: "10px"
+    // });
+
     $(".albumIcon").css({
-        height: "80px"
+        height: "60px"
     });
 
     $(".albumIcon span").css({
-        fontSize: "19px",
-        width: "27px",
-        padding: "10px"
+        fontSize: "14px",
+        width: "20px",
+        padding: "8px"
     });
 
     $(".albumInfos p").css("margin", "0");
@@ -50,7 +60,7 @@ function setDisplayCompact() {
         justifyContent: "center",
         flexDirection: "row",
         alignItems: "baseline",
-        height: "75px"
+        height: "65px"
     });
 
     $(".albumTitle").css("padding", "0 15px");
@@ -59,7 +69,7 @@ function setDisplayCompact() {
         minWidth : "230px",
         maxWidth: "350px",
         flexDirection: "column",
-        maxHeight: "200px",
+        maxHeight: "180px",
         margin: "15px"
     });
 
@@ -95,10 +105,10 @@ function setDisplayCompact() {
     $(".addAlbumHead p").css("margin-left", "0");
 
     $(".addAlbumHead span").css({
-        fontSize:"19px",
-        width: "27px",
-        height: "27px",
-        padding: "10px"
+        fontSize:"14px",
+        width: "20px",
+        height: "20px",
+        padding: "8px"
     });
 
     $(".albumActions").css({
@@ -291,7 +301,7 @@ function setDisplayTile() {
         flexDirection : "column",
         margin:"auto",
         alignItems: "flex-start",
-        width: "85%",
+        width: "75%",
     });
 
     $(".albumInfos").css({
@@ -369,7 +379,6 @@ function setDisplayTile() {
     $(".albumActions a:last-child").css("margin-left", "5px");
 }
 
-
 function ShowIconDesc() {
     $(".albumActions span.iconLegend").show();
 }
@@ -395,7 +404,10 @@ function AddHoverOnAlbumActions() {
 $(document).ready(function () {
 
     var displayType = "";
-    $.cookie("pwg_album_manager_view", "tile");
+
+    if (!$.cookie("pwg_album_manager_view")) {
+        $.cookie("pwg_album_manager_view", "tile");
+    }
 
     $(".addAlbum").on("click", function (e) {
         if (e.target.className !== "cancelAddAlbum") {
@@ -434,7 +446,7 @@ $(document).ready(function () {
             $(".addAlbum p").hide();
         }
         
-        $.cookie("pwg_album_manager_view", "compact", { expires : 20*365 });
+        $.cookie("pwg_album_manager_view", "compact");
         displayType = "compact";
     });
 
@@ -445,7 +457,7 @@ $(document).ready(function () {
             $(".addAlbum p").hide();
         }
 
-        $.cookie("pwg_album_manager_view", "line" , { expires : 20*365 });
+        $.cookie("pwg_album_manager_view", "line");
         displayType = "line";
     });
 
@@ -456,7 +468,7 @@ $(document).ready(function () {
             $(".addAlbum p").show();
         }
 
-        $.cookie("pwg_album_manager_view", "tile", { expires : 20*365 });
+        $.cookie("pwg_album_manager_view", "tile");
         displayType = "tile";
     });
 });
