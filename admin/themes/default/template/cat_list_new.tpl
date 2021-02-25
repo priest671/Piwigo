@@ -1,6 +1,7 @@
 {combine_script id='common' load='footer' path='admin/themes/default/js/common.js'}
 
 {combine_script id='alternativeView' load='footer' path='admin/themes/default/js/cat_list_new.js'}
+{combine_script id='jquery.cookie' path='themes/default/js/jquery.cookie.js' load='footer'}
 
 {footer_script require='jquery.ui.sortable'}{literal}
 jQuery(document).ready(function(){
@@ -13,7 +14,7 @@ jQuery(document).ready(function(){
 <div class="selectedAlbum cat-list-album-path">
   <span class="icon-sitemap selectedAlbum-first">{$CATEGORIES_NAV}</span>
   <div class="AlbumViewSelector">
-    <input type="radio" name="layout" class="switchLayout" id="displayTile" checked/><label for="displayTile"><span class="icon-th-large firstIcon tiptip" title="{'Compact View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout tiptip" id="displayLine"/><label for="displayLine"><span class="icon-th-list tiptip" title="{'Line View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout" id="displayDefault"/><label for="displayDefault"><span class="icon-pause lastIcon tiptip" title="{'Tile View'|translate}"></span></label>
+    <input type="radio" name="layout" class="switchLayout" id="displayCompact" {if $smarty.cookies.pwg_album_manager_view == 'compact'}checked{/if}/><label for="displayCompact"><span class="icon-th-large firstIcon tiptip" title="{'Compact View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout tiptip" id="displayLine" {if $smarty.cookies.pwg_album_manager_view == 'line'}checked{/if}/><label for="displayLine"><span class="icon-th-list tiptip" title="{'Line View'|translate}"></span></label><input type="radio" name="layout" class="switchLayout" id="displayTile" {if $smarty.cookies.pwg_album_manager_view == 'tile'}checked{/if}/><label for="displayTile"><span class="icon-pause lastIcon tiptip" title="{'Tile View'|translate}"></span></label>
   </div>
 </div>
 {assign var='color_tab' value=["icon-red", "icon-blue", "icon-yellow", "icon-purple", "icon-green"]}
@@ -25,7 +26,7 @@ jQuery(document).ready(function(){
     </div>
     <form action="{$F_ACTION}" method="post">
       <input type="hidden" name="pwg_token" value="{$PWG_TOKEN}">
-      <label for="virtual_name">{"Album Name"|@translate}</label>
+      <label for="virtual_name">{"Album name"|@translate}</label>
       <input type="text" name="virtual_name" placeholder="{"Album name"|@translate}">
       <button name="submitAdd" type="submit" class="buttonLike">
           <i class="icon-plus"></i> {"Create"|@translate}
@@ -102,6 +103,10 @@ jQuery(document).ready(function(){
 .AlbumViewSelector span {
   border-radius: 0;
   padding: 7px;
+}
+
+.addAlbum button {
+  white-space: nowrap;
 }
 
 /* Should be done with :first-child and :last-child but doesn't work */
