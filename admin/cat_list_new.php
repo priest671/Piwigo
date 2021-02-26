@@ -108,7 +108,7 @@ check_input_parameter('parent_id', $_GET, false, PATTERN_ID);
 
 $categories = array();
 
-$base_url = get_root_url() . 'admin.php?page=';
+$base_url = get_root_url() . 'admin.php?page=cat_list_new';
 $navigation = '<a href="' . $base_url . '">';
 $navigation .= l10n('Home');
 $navigation .= '</a>';

@@ -403,8 +403,6 @@ function AddHoverOnAlbumActions() {
 
 $(document).ready(function () {
 
-    var displayType = "";
-
     if (!$.cookie("pwg_album_manager_view")) {
         $.cookie("pwg_album_manager_view", "tile");
     }
@@ -413,7 +411,7 @@ $(document).ready(function () {
         if (e.target.className !== "cancelAddAlbum") {
             $(".addAlbum").addClass('input-mode');
 
-            if (displayType !== "tile") {
+            if ($.cookie("pwg_album_manager_view") !== "tile") {
                 $(".addAlbum p").hide(300);
             }
         };
@@ -426,17 +424,14 @@ $(document).ready(function () {
 
     if ($("#displayCompact").is(":checked")) {
         setDisplayCompact();
-        displayType = "compact";
     };
 
     if ($("#displayLine").is(":checked")) {
         setDisplayLine();
-        displayType = "line";
     };
 
     if ($("#displayTile").is(":checked")) {
         setDisplayTile();
-        displayType = "tile";
     };
 
     $("#displayCompact").change(function () {
@@ -447,7 +442,6 @@ $(document).ready(function () {
         }
         
         $.cookie("pwg_album_manager_view", "compact");
-        displayType = "compact";
     });
 
     $("#displayLine").change(function () {
@@ -458,7 +452,6 @@ $(document).ready(function () {
         }
 
         $.cookie("pwg_album_manager_view", "line");
-        displayType = "line";
     });
 
     $("#displayTile").change(function () {
@@ -467,8 +460,7 @@ $(document).ready(function () {
         if ($(".addAlbum").hasClass("input-mode")) {
             $(".addAlbum p").show();
         }
-
+        
         $.cookie("pwg_album_manager_view", "tile");
-        displayType = "tile";
     });
 });
